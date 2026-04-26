@@ -1,6 +1,6 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local';
+import CursorGlow from "./components/common/CursorGlow";
 import "./globals.css";
 
 const soriaFont = localFont({
@@ -14,12 +14,12 @@ const vercettiFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Krishna R ✌️",
-  description: "B.Tech CSE student passionate about technology, innovation, and building real-world solutions.",
-  keywords: "Krishna R, Cloud & DevOps, B.Tech CSE, Amity University Kolkata, Hackathon Finalist, Python, Web Development",
-  authors: [{ name: "Krishna R" }],
-  creator: "Krishna R",
-  publisher: "Krishna R",
+  title: "Manikant Hosur",
+  description: "BBA student, Vibe Coder, Python Developer, AI Automation Engineer & Affiliate Marketing Strategist. Engineering Intelligence. Automating the Future.",
+  keywords: "Manikant Hosur, Python Developer, AI Automation, Jarvis AI, Affiliate Marketing, Fiverr Freelancer, Vibe Coder, BBA, KLE CBA Hubli",
+  authors: [{ name: "Manikant Hosur" }],
+  creator: "Manikant Hosur",
+  publisher: "Manikant Hosur",
   formatDetection: {
     email: false,
     address: false,
@@ -36,17 +36,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Krishna R - Cloud & DevOps",
-    description: "B.Tech CSE student passionate about technology, innovation, and building real-world solutions.",
-    url: "https://github.com/KRISHNA0R/PORTFOLIOv2",
-    siteName: "Krishna R's Portfolio",
+    title: "Manikant Hosur — AI Engineer from the Future",
+    description: "Engineering Intelligence. Automating the Future. Vibe Coder · Python · AI Automation · Affiliate Marketing.",
+    url: "https://github.com/manikant12-hub/Manikant-portfolio",
+    siteName: "Manikant Hosur's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Krishna R - Cloud & DevOps",
-    description: "B.Tech CSE student passionate about technology, innovation, and building real-world solutions.",
+    title: "Manikant Hosur — AI Engineer from the Future",
+    description: "Engineering Intelligence. Automating the Future.",
   },
   verification: {
     google: "",
@@ -71,8 +71,8 @@ export default function RootLayout({
         className={`${soriaFont.variable} ${vercettiFont.variable} font-sans antialiased`}
       >
         {children}
+        <CursorGlow />
       </body>
-      <GoogleAnalytics gaId={'G-7WD4HM3XRE'}/>
     </html>
   );
 }

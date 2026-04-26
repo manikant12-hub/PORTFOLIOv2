@@ -10,6 +10,7 @@ import { isMobile } from "react-device-detect";
 import { useThemeStore } from "@stores";
 
 
+import CinematicOverlay from "./CinematicOverlay";
 import Preloader from "./Preloader";
 import ProgressLoader from "./ProgressLoader";
 import { ScrollHint } from "./ScrollHint";
@@ -93,6 +94,7 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
 
       <ThemeSwitcher />
       <ScrollHint />
+      <CinematicOverlay />
     </div>
   );
 };

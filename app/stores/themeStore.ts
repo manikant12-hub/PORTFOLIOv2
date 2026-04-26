@@ -12,6 +12,12 @@ const AvailableThemes: Theme[] = [{
 }, {
   type: 'dark',
   color: '#111'
+}, {
+  type: 'dark',
+  color: '#1a0a2e'
+}, {
+  type: 'dark',
+  color: '#0a1a1a'
 }];
 
 interface ThemeStore {
@@ -27,7 +33,7 @@ export const useThemeStore = create<ThemeStore>()(
       theme: AvailableThemes[0],
       nextTheme: () => {
         const themes = get().themes;
-        const activeThemeIndex = themes.findIndex(theme => theme.type === get().theme.type);
+        const activeThemeIndex = themes.findIndex(theme => theme.color === get().theme.color);
         const nextThemeIndex = (activeThemeIndex + 1) % themes.length;
         set(() => ({ theme: themes[nextThemeIndex] }));
       },

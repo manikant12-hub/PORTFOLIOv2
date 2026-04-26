@@ -1,9 +1,9 @@
-# Krishna R Portfolio v2.0
-Hello there! I'm Krishna R, a B.Tech Computer Science student, Cloud & DevOps enthusiast, and a creative thinker.
+# Manikant Hosur — Portfolio v2.0
+Hello there! I'm Manikant Hosur — a BBA student at KLE CBA Hubli, Vibe Coder, Python Developer, AI Automation Engineer, and Affiliate Marketing Strategist.
 
-This is the interactive 3D version of my personal portfolio, built to showcase my journey, hackathon projects, and technical skills.
+This is the interactive 3D version of my personal portfolio, built to showcase my journey across AI engineering, automation, and digital marketing.
 
-Checkout the live version at [devkrishnarv2-0.vercel.app](https://devkrishna-v2.vercel.app/)
+Engineering Intelligence. Automating the Future.
 
 ## 🚀 Tech Stack
 
@@ -16,4 +16,4 @@ Checkout the live version at [devkrishnarv2-0.vercel.app](https://devkrishna-v2.
 - **Styling**: Tailwind CSS
 
 ---
-Built with ❤️ by Krishna R.
+Built with ❤️ by Manikant Hosur.

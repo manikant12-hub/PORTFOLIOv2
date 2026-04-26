@@ -8,7 +8,7 @@ const StarsContainer = () => {
   if (!isDarkTheme) return null;
 
   return (
-    <Stars radius={200} depth={100} count={5000} factor={10} saturation={10} fade={true} speed={1} />
+    <Stars radius={200} depth={150} count={8000} factor={12} saturation={10} fade={true} speed={1.5} />
   );
 };
 
