@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 /**
  * Claude generated this. Very good code ngl.
@@ -11,7 +11,7 @@ export const TouchPanControls = () => {
   const touchStartRef = useRef({ x: 0, y: 0 })
   const cameraRotationRef = useRef({ x: 0, y: 0 })
   const targetRotationRef = useRef({ x: 0, y: 0 })
-  const [isDragging, setIsDragging] = useState(false)
+  const isDraggingRef = useRef(false)
 
   // Set initial camera and target rotation values
   useEffect(() => {
@@ -39,11 +39,11 @@ export const TouchPanControls = () => {
     camera.updateProjectionMatrix()
   })
 
-  // Handle touch events
+  // Handle touch events — single effect, refs prevent stale closures
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
-        setIsDragging(true)
+        isDraggingRef.current = true
         touchStartRef.current = {
           x: e.touches[0].clientX,
           y: e.touches[0].clientY
@@ -57,7 +57,7 @@ export const TouchPanControls = () => {
     }
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging || e.touches.length !== 1) return
+      if (!isDraggingRef.current || e.touches.length !== 1) return
 
       // Calculate touch movement delta
       const touchX = e.touches[0].clientX
@@ -73,14 +73,12 @@ export const TouchPanControls = () => {
     }
 
     const handleTouchEnd = () => {
-      if (isDragging) {
-        setIsDragging(false)
-      }
+      isDraggingRef.current = false
     }
 
     // Momentum scrolling when finger is lifted
     const handleTouchMomentum = () => {
-      if (!isDragging && Math.abs(targetRotationRef.current.x - camera.rotation.y) < 0.001) {
+      if (!isDraggingRef.current && Math.abs(targetRotationRef.current.x - camera.rotation.y) < 0.001) {
         // When movement nearly stops, update the reference point
         cameraRotationRef.current = {
           x: camera.rotation.y,
@@ -104,17 +102,7 @@ export const TouchPanControls = () => {
       document.removeEventListener('touchend', handleTouchEnd)
       clearInterval(momentumInterval)
     }
-  }, [camera, isDragging])
-
-  // Prevent default behavior to avoid browser gestures interfering
-  // useEffect(() => {
-  //   const preventDefault = (e) => e.preventDefault()
-  //   document.addEventListener('touchmove', preventDefault, { passive: false })
-
-  //   return () => {
-  //     document.removeEventListener('touchmove', preventDefault)
-  //   }
-  // }, [])
+  }, [camera])
 
   return null
 }
