@@ -35,6 +35,6 @@ export const FOOTER_LINKS: FooterLink[] = [
     name: 'Resume',
     hoverText: 'Download Profile',
     icon: 'icons/file.svg',
-    url: './Manikant_Hosur_Resume.pdf',
+    url: './Manikant_Hosur_Resume.pdf.pdf',
   }
 ];
